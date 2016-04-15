@@ -1,4 +1,4 @@
 #!/bin/sh
 cp ~/.zshrc ./zshrc-linux
-cp ~/.vimrc ./vimrc
+cp ~/.vimrc ./vimrc-linux
 
