@@ -23,42 +23,49 @@
 		],
 		"description": "Include guard"
 	},
-	
 	"Class declaration": {
 		"prefix": "class",
-		"body": ["class $1 {\npublic:\n\t$1();\n\tvirtual ~$1();",
-		"private:\n\t$2\n};"],
+		"body": [
+			"class $1 {\npublic:\n\t$1();\n\tvirtual ~$1();",
+			"private:\n\t$2\n};"
+		],
 		"description": "Class declaration"
 	},
-	
 	"Main function": {
 		"prefix": "main",
 		"body": "int main(int argc, char** argv){\n\t$1\n}",
 		"description": "Main function"
 	},
-	
-	"Catch main":{
+	"Catch main": {
 		"prefix": "catch_main",
 		"body": "#define CATCH_CONFIG_MAIN\n#include \"catch.hpp\"\n",
 		"description": "catch header and main"
 	},
-	
-	"Catch test case":{
+	"Catch test case": {
 		"prefix": "catch_test_case",
-		"body": ["TEST_CASE(\"$1\", \"[$2]\") {\n\n$3\n}"],
+		"body": [
+			"TEST_CASE(\"${1:test_name}\") {\n\n$2\n}"
+		],
 		"description": "Catch test case"
 	},
-	
-	"Catch section":{
+	"Catch section": {
 		"prefix": "catch_section",
-		"body": ["SECTION(\"$1\") {\n$2\n}"],
+		"body": [
+			"SECTION(\"${1:section_name}\") {\n$2\n}"
+		],
 		"description": "Catch section"
+	},
+	"For size_t i": {
+		"prefix": "fori",
+		"body": "for (size_t i=0; i<$1; ++i)$2",
+		"description": "for size_t i snippet"
+	},
+	"Switch": {
+		"prefix": "switch",
+		"body": [
+			"switch($1){\n\tcase($2):\n\t$3\n\tbreak;",
+			"default:\n\tbreak;\n}"
+		],
+		"description": "switch case snippet"
 	}
-	
-	
-	
-	
-	
-	
-	
 }
