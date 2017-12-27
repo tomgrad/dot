@@ -1,8 +1,14 @@
 #!/bin/sh
-cp ~/.zshrc ./zshrc-linux
-#cp ~/.vimrc ./vimrc-linux
-cp ~/.config/nvim/init.vim ./nvim
+cp ~/.zshrc .
+cp ~/.Xresources .
+cp ~/.nanorc .
+cp ~/.gitconfig .
+cp ~/.config/i3/config ./.config/i3
+cp ~/.config/i3status/config ./.config/i3status
+cp -r ~/.config/ranger ./.config
 
-cp ~/.config/nvim/autoload/* ./nvim/autoload
-cp ~/.config/Code/User/snippets/* ./vscode-snippets
+#cp ~/.vimrc ./vimrc-linux
+#cp ~/.config/nvim/init.vim ./nvim
+#cp ~/.config/nvim/autoload/* ./nvim/autoload
+#cp ~/.config/Code/User/snippets/* ./vscode-snippets
 
