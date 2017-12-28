@@ -1,7 +1,0 @@
-open_with evince
-rename fun.m
-open_with 
-mkdir tst
-open_with 2
-shell pwd
-delete
