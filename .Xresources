@@ -52,6 +52,5 @@ URxvt.keysym.M-u:           perl:url-select:select_next
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
 URxvt.keysym.M-s:           perl:keyboard-select:search
 
-URxvt.resize-font.smaller:	C--
-URxvt.resize-font.bigger:	C-+
-
+URxvt.keysym.C-0:	resize-font:reset
+URxvt.keysym.C-equal:	resize-font:bigger
