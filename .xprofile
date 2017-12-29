@@ -1,3 +1,4 @@
-xcompmgr -c &
-
+#xcompmgr -c &
+compton -b
+#beep off
 xset b off

@@ -1,3 +1,11 @@
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.dpi: 96
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
 ! special
 *.foreground:   #c5c8c6
 *.background:   #1d1f21
@@ -35,13 +43,16 @@
 *.color7:       #707880
 *.color15:      #c5c8c6
 
+!! real transparency
+URxvt.depth: 32
+!!urxvt*background: rgba:0000/0000/0200/c800
+URxvt.background: [80]#000000
+
+!! fake transparency
+!!URxvt.transparent: true
+!!URxvt.shading: 20
 
 URxvt.font: xft:Hack:size=15
-!! URxvt*font: xft:PowerlineSymbols for Powerline:size=10
-!! URxvt.font: xft:Terminus:pixelsize=12,xft:Inconsolata\ for\ Powerline:pixelsize=12
-
-URxvt.transparent: true
-URxvt.shading: 20
 
 URxvt.scrollBar: false
 
@@ -54,3 +65,4 @@ URxvt.keysym.M-s:           perl:keyboard-select:search
 
 URxvt.keysym.C-0:	resize-font:reset
 URxvt.keysym.C-equal:	resize-font:bigger
+
