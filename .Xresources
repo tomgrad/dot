@@ -2,7 +2,7 @@ Xft.autohint: 0
 Xft.antialias: 1
 Xft.hinting: true
 Xft.hintstyle: hintslight
-Xft.dpi: 96
+Xft.dpi: 144
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
@@ -52,7 +52,7 @@ URxvt.background: [80]#000000
 !!URxvt.transparent: true
 !!URxvt.shading: 20
 
-URxvt.font: xft:Hack:size=15
+URxvt.font: xft:Hack:size=12
 
 URxvt.scrollBar: false
 
