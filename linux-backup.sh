@@ -8,6 +8,7 @@ cp ~/.config/i3status/config ./.config/i3status
 cp ~/.config/compton.conf ./.config
 cp -r ~/.config/ranger ./.config
 cp -r ~/.config/dunst ./.config
+cp -r ~/.config/polybar ./.config
 
 cp ~/.vimrc .
 cp ~/.xprofile .

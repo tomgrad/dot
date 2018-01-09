@@ -1,6 +1,6 @@
 set $mod Mod4
 
-gaps inner 10
+gaps inner 5
 #gaps outer 10
 smart_gaps on
 
@@ -196,22 +196,22 @@ bindsym $mod+minus scratchpad show
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	i3bar_command i3bar -t
-        status_command i3status
-	position top
+#bar {
+#	i3bar_command i3bar -t
+#        status_command i3status
+#	position top
+#
+#	font pango: Icons, DejaVu Sans Mono 12
+#    colors {
+#        background #00000080
+#        statusline #ffffff
 
-	font pango: Icons, DejaVu Sans Mono 12
-    colors {
-        background #00000080
-        statusline #ffffff
-
-        focused_workspace  #ffffff #285577
-        active_workspace   #ffffff #333333
-        inactive_workspace #888888 #222222
-        urgent_workspace   #ffffff #900000
-    }
-}
+#        focused_workspace  #ffffff #285577
+#        active_workspace   #ffffff #333333
+#        inactive_workspace #888888 #222222
+#        urgent_workspace   #ffffff #900000
+#    }
+#}
 
 # PgDn
 bindsym $mod+Next workspace next	
@@ -232,8 +232,9 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 
+exec polybar top &
 exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
-exec ~/.dropbox-dist/dropboxd
+exec ~/.dropbox-dist/dropboxd &
 
 # automount removables
-exec udiskie
+exec udiskie &
