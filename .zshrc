@@ -91,3 +91,10 @@ prompt_context() {
 #    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
   fi
 }
+
+
+alias vim="nvim"
+alias vi="nvim"
+alias pacaur-Syu="pacaur -Syu --noconfirm --noedit"
+
+

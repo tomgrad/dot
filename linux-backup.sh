@@ -9,6 +9,8 @@ cp ~/.config/compton.conf ./.config
 cp -r ~/.config/ranger ./.config
 cp -r ~/.config/dunst ./.config
 cp -r ~/.config/polybar ./.config
+cp -r ~/.config/nvim ./.config
+cp -r ~/.config/termite ./.config
 
 cp ~/.vimrc .
 cp ~/.xprofile .
