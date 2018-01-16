@@ -234,9 +234,10 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 
-exec polybar top &
-exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
-exec ~/.dropbox-dist/dropboxd &
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+exec --no-startup-id polybar top 
+exec --no-startup-id nm-applet
+exec --no-startup-id ~/.dropbox-dist/dropboxd
 
 # automount removables
-exec udiskie &
+exec --no-startup-id udiskie

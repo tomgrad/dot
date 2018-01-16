@@ -1,4 +1,9 @@
 #xcompmgr -c &
-compton -b
+#compton -b
 #beep off
-xset b off
+#xset b off
+#
+#
+export EDITOR=nvim
+export VISUAL=nvim
+export PATH="/home/tomgrad/bin:$PATH"

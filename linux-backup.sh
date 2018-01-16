@@ -3,6 +3,9 @@ cp ~/.zshrc .
 cp ~/.Xresources .
 cp ~/.nanorc .
 cp ~/.gitconfig .
+cp ~/.vimrc .
+cp ~/.xsession .
+cp ~/.xprofile .
 cp ~/.config/i3/config ./.config/i3
 cp ~/.config/i3status/config ./.config/i3status
 cp ~/.config/compton.conf ./.config
@@ -12,9 +15,5 @@ cp -r ~/.config/polybar ./.config
 cp -r ~/.config/nvim ./.config
 cp -r ~/.config/termite ./.config
 
-cp ~/.vimrc .
-cp ~/.xprofile .
-#cp ~/.config/nvim/init.vim ./nvim
-#cp ~/.config/nvim/autoload/* ./nvim/autoload
 #cp ~/.config/Code/User/snippets/* ./vscode-snippets
 
