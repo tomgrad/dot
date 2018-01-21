@@ -2,6 +2,6 @@
 #i3
 
 #xcompmgr -c &
-compton -b
+#compton -b
 #beep off
 xset b off
