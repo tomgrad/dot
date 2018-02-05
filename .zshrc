@@ -96,4 +96,5 @@ prompt_context() {
 alias vim="nvim"
 alias vi="nvim"
 alias pacaur-Syu="pacaur -Syu --noconfirm --noedit"
+alias r="ranger"
 

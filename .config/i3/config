@@ -102,9 +102,6 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# multi
-bindsym $mod+x move workspace to output left
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -194,6 +191,11 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Next workspace next	
 bindsym $mod+Prior workspace prev	
 
+bindsym Print exec scrot $HOME/Pictures/%Y-%m-%d_%H%M%S.png
+bindsym Mod1+Print exec scrot -u $HOME/Pictures/%Y-%m-%d_%H%M%S.png
+bindsym Mod1+Shift+Print exec scrot -s $HOME/Pictures/%Y-%m-%d_%H%M%S.png
+
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
@@ -205,8 +207,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightnes
 
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
-# exec_always --no-startup-id feh --bg-scale ~/Pictures/super_metroid.jpg --bg-scale ~/Pictures/pulpwars.png &
-
 exec --no-startup-id polybar top 
 exec --no-startup-id nm-applet
 exec --no-startup-id ~/.dropbox-dist/dropboxd
