@@ -20,6 +20,15 @@ bindsym $mod+Return exec $term
 bindsym $mod+F2 exec --no-startup-id firefox
 bindsym $mod+F3 exec $term -e ranger
 
+
+# dropdown terminal
+for_window[instance="dropdown"] floating enable
+for_window[instance="dropdown"] move scratchpad
+exec $term --name dropdown
+bindsym $mod+backslash [instance="dropdown"] scratchpad show
+
+
+
 # kill focused window
 bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
