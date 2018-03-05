@@ -17,7 +17,7 @@ hide_edge_borders both
 floating_modifier $mod
 
 bindsym $mod+Return exec $term
-bindsym $mod+F2 exec --no-startup-id firefox
+bindsym $mod+F2 exec --no-startup-id opera
 bindsym $mod+F3 exec $term -e ranger
 
 
@@ -28,11 +28,14 @@ exec $term --name dropdown
 bindsym $mod+backslash [instance="dropdown"] scratchpad show
 
 
+# rofi
+bindsym $mod+d exec rofi -show run  
+bindsym Mod1+Tab exec rofi -show window
 
 # kill focused window
 bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
 
 # change focus
 bindsym $mod+h focus left
@@ -219,7 +222,7 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 exec --no-startup-id polybar top 
 exec --no-startup-id nm-applet
 exec --no-startup-id ~/.dropbox-dist/dropboxd
-exec --no-startup-id compton
+#exec --no-startup-id compton
 #Remaps the caps lock button to escape 
 exec_always --no-startup-id setxkbmap -option caps:escape
 
