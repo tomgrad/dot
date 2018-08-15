@@ -4,6 +4,7 @@
 #xset b off
 #
 #
+export TERM=xterm-256color
 export EDITOR=nvim
 export VISUAL=nvim
-export PATH="/home/tomgrad/bin:$PATH"
+export PATH="/home/tomgrad/bin:/home/tomgrad/.local/bin:$PATH"

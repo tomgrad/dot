@@ -1,14 +1,38 @@
 set $mod Mod4
 set $term --no-startup-id termite
+set $www --no-startup-id firefox 
 
-gaps inner 5
+set $wallpaper ~/Pictures/wallpaper.png
+set $lock_wallpaper ~/Pictures/wallpaper_lock.png
+
+#gaps inner 0
+
 #gaps outer 10
-smart_gaps on
+#smart_gaps on
 
-font pango:Droid Sans 12
+bar {
+    status_command i3blocks
+    position top
+    mode dock
+	modifier None
+    font pango: Hack Nerd Font Mono 12
+    colors{
+        background #002b36
+        statusline #93a1a1
+        separator #657b83
+#        focused_workspace #fdf6e3 #6c71c4 #fdf6e3
+#    active_workspace #fdf6e3 #6c71c4 #fdf6e3
+#    inactive_workspace #002b36 #586e75 #002b36
+#    urgent_workspace #d33682 #d33682 #fdf6e3
+    }
+}
+
+
+font pango: Droid Sans 11
+#font pango: Font Awesome Free 5 11
 
 new_window pixel 1
-hide_edge_borders both
+hide_edge_borders smart
 #bindsym $mod+b [class="^.*"] border toggle
 #for_window [class="^.*"] border pixel 0
 #for_window [class="URxvt"] border normal
@@ -17,15 +41,20 @@ hide_edge_borders both
 floating_modifier $mod
 
 bindsym $mod+Return exec $term
-bindsym $mod+F2 exec --no-startup-id opera
-bindsym $mod+F3 exec $term -e ranger
+bindsym $mod+Shift+w exec $www
+
+bindsym $mod+F2 exec --no-startup-id ~/.scripts/dmenumount
+bindsym $mod+F3 exec --no-startup-id ~/.scripts/dmenuumount
+
+#bindsym $mod+F3 exec $term -e ranger
+
 
 
 # dropdown terminal
-for_window[instance="dropdown"] floating enable
-for_window[instance="dropdown"] move scratchpad
-exec $term --name dropdown
-bindsym $mod+backslash [instance="dropdown"] scratchpad show
+#for_window[instance="dropdown"] floating enable
+#for_window[instance="dropdown"] move scratchpad
+#exec $term --name dropdown
+#bindsym $mod+backslash [instance="dropdown"] scratchpad show
 
 
 # rofi
@@ -119,7 +148,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-set $Locker i3lock -c 000000 && sleep 1
+set $Locker i3lock -i ~/Pictures/wallpaper_lock.png && sleep 1
 
 set $mode_config Edit 1: zshrc 3: i3 4: polybar
 
@@ -135,7 +164,7 @@ mode "$mode_config" {
 
 bindsym $mod+F11 mode "$mode_config"
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system System l:  e:  s:   h:  r:  S:  
 
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
@@ -207,19 +236,26 @@ bindsym Print exec scrot $HOME/Pictures/%Y-%m-%d_%H%M%S.png
 bindsym Mod1+Print exec scrot -u $HOME/Pictures/%Y-%m-%d_%H%M%S.png
 bindsym Mod1+Shift+Print exec scrot -s $HOME/Pictures/%Y-%m-%d_%H%M%S.png
 
-
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+set $newvol pkill -RTMIN+10 i3blocks
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer --allow-boost -i 5 && $newvol
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer --allow-boost -d 5 && $newvol
+bindsym XF86AudioMute exec --no-startup-id pactl pamixer -t && $newvol
+
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
-exec --no-startup-id polybar top 
+exec_always --no-startup-id feh --bg-scale $wallpaper
+# exec_always --no-startup-id ~/.scripts/polybar_launch.sh
+
+#exec --no-startup-id polybar top 
 exec --no-startup-id nm-applet
 exec --no-startup-id ~/.dropbox-dist/dropboxd
 #exec --no-startup-id compton
@@ -227,6 +263,6 @@ exec --no-startup-id ~/.dropbox-dist/dropboxd
 exec_always --no-startup-id setxkbmap -option caps:escape
 
 # automount removables
-exec --no-startup-id udiskie
+# exec --no-startup-id udiskie
 
 # vim: filetype=i3

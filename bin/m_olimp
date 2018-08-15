@@ -1,0 +1,2 @@
+#!/bin/sh
+sshfs tomgrad@olimp.if.pw.edu.pl: ~/olimp

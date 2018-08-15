@@ -1,0 +1,12 @@
+{
+    "editor.wordWrap": "on",
+    "window.menuBarVisibility": "toggle",
+    "editor.wordBasedSuggestions": false,
+    "latex-workshop.view.pdf.viewer": "browser",
+    "editor.fontFamily": "'SauceCodePro Nerd Font','Hack Nerd Font Mono', 'monospace'",
+    "git.autofetch": true,
+
+// The full path of the clang-format executable.
+"C_Cpp.clang_format_path": "/usr/bin/clang-format"
+
+}

@@ -1,0 +1,105 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+command=/usr/lib/i3blocks/$BLOCK_NAME
+separator_block_width=30
+markup=pango
+
+# Volume indicator
+#
+# The first parameter sets the step (and units to display)
+# The second parameter overrides the mixer selection
+# See the script for details.
+[volume]
+label=墳
+#label=♪
+instance=Master
+#instance=PCM
+interval=once
+signal=10
+
+[cpu_usage]
+label=
+interval=10
+min_width= 100%
+command=/usr/lib/i3blocks/cpu_usage -d 0
+
+[temperature]
+label=
+interval=10
+command=echo $(sensors -u | sed -n 's/  temp1_input: \([0-9]*\)\.[0-9]*/\1/p') 糖
+
+# Memory usage
+#
+# The type defaults to "mem" if the instance is not specified.
+[memory]
+label=
+#separator=false
+interval=30
+
+# Disk usage
+#
+# The directory defaults to $HOME if the instance is not specified.
+# The script may be called with a optional argument to set the alert
+# (defaults to 10 for 10%).
+[disk]
+label=
+#instance=/mnt/data
+interval=30
+
+# Network interface monitoring
+#
+# If the instance is not specified, use the interface used for default route.
+# The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
+[iface]
+label=
+#instance=wlan0
+#color=#00FF00
+interval=10
+separator=false
+
+#[wifi]
+#instance=wlp4s0
+#interval=10
+#separator=false
+
+[bandwidth]
+instance=wlp4s0
+interval=5
+command=/usr/lib/i3blocks/bandwidth -i ' ' -o ' '
+# | sed 's/IN// ; s/OUT//' # old ver.
+min_width= 100K  100K
+
+[battery]
+label=
+interval=30
+command=/usr/lib/i3blocks/battery | sed 's/CHR/⚡/;s/DIS//'
+[time]
+command=date '+%Y-%m-%d %H:%M' | sed 's/ / <b>/ ; s/$/<\/b>/'
+interval=15
+[separator]
+
+

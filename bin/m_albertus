@@ -1,0 +1,2 @@
+#!/bin/sh
+sshfs tomgrad@albertus.if.pw.edu.pl: ~/albertus

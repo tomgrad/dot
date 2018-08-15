@@ -1,0 +1,11 @@
+#!/bin/bash
+PID=`ps ax | grep "[o]limp.if.pw" | head -n 1 | cut -d ' ' -f2`
+if [ $PID ]
+then
+    kill $PID
+fi    
+ssh -N -f -L 2222:p6d:2217 tomgrad@olimp.if.pw.edu.pl
+
+    #ssh -N -f -L 2222:p6d:2217 tomgrad@olimp.if.pw.edu.pl -X
+ssh localhost -p 2222
+
